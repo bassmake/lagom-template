@@ -9,6 +9,7 @@ ThisBuild / name := "dynamic-message-forwarder"
 ThisBuild / version := "0.1"
 ThisBuild / organization := "sk.bsmk"
 ThisBuild / scalaVersion := "2.12.10"
+ThisBuild / scalafmtOnCompile := true
 
 lazy val `dynamic-message-forwarder` = (project in file("."))
   .settings(
