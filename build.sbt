@@ -1,11 +1,7 @@
 import Dependencies._
 import Settings._
 
-name := "lagom-template"
-version := "0.1"
-scalaVersion := "2.12.10"
-
-ThisBuild / name := "dynamic-message-forwarder"
+ThisBuild / name := "lagom-template"
 ThisBuild / version := "0.1"
 ThisBuild / organization := "sk.bsmk"
 ThisBuild / scalaVersion := "2.12.10"
@@ -13,7 +9,7 @@ ThisBuild / scalafmtOnCompile := true
 
 lazy val `dynamic-message-forwarder` = (project in file("."))
   .settings(
-    name := "Dynamic message forwarder"
+    name := "lagom-template"
   )
 
 lazy val shared = (project in file("shared"))
@@ -22,13 +18,24 @@ lazy val shared = (project in file("shared"))
     libraryDependencies ++= SharedDeps
   )
 
+lazy val `shared-domain` = (project in file("domain/shared"))
+  .settings(
+    name := "shared-domain",
+    commonSettings,
+    libraryDependencies ++= DomainDeps
+  )
+  .dependsOn(shared)
 
 lazy val domain = (project in file("domain"))
   .settings(
     commonSettings,
     libraryDependencies ++= DomainDeps
   )
-  .dependsOn(shared)
+  .dependsOn(
+  )
+  .aggregate(
+    `shared-domain`
+  )
 
 lazy val api = (project in file("api"))
   .settings(

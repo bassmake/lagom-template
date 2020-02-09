@@ -18,27 +18,30 @@ object Dependencies {
 
     import Versions._
 
-    val Neme = "com.softwaremill.neme" %% "neme-plugin" % NemeVersion
-    val Tagging = "com.softwaremill.common" %% "tagging" % TaggingVersion
+    val neme = "com.softwaremill.neme" %% "neme-plugin" % NemeVersion
+    val tagging = "com.softwaremill.common" %% "tagging" % TaggingVersion
 
-    val LagomPlayJson = "com.lightbend.lagom" %% "lagom-scaladsl-play-json" % LagomVersion.current
+    val lagomPlayJson = "com.lightbend.lagom" %% "lagom-scaladsl-play-json" % LagomVersion.current
+
+    val scalaTest = "org.scalatest" %% "scalatest" % scalaTest
   }
 
   import Libraries._
 
   val CommonDeps = List(
-    compilerPlugin(Neme),
-    Tagging
+    compilerPlugin(neme),
+    tagging
   )
 
   val SharedDeps = List(
-    LagomPlayJson
+    lagomPlayJson
   )
 
   val DomainDeps = List(
-    lagomScaladslPersistence
+    lagomScaladslPersistence,
+    scalaTest % Test,
+    lagomScaladslTestKit
   )
-
   val ApiDeps = List(
     lagomScaladslApi
   )
