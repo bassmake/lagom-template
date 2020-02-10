@@ -10,7 +10,7 @@ object Dependencies {
     val NemeVersion =  "0.0.5"
     val TaggingVersion = "2.2.1"
 
-    val ScalaTestVersion = "3.1.0"
+    val ScalaTestVersion = "3.0.8"
 
   }
 
