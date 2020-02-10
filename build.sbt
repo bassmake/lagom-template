@@ -8,8 +8,12 @@ ThisBuild / scalaVersion := "2.12.10"
 ThisBuild / scalafmtOnCompile := true
 
 lazy val `dynamic-message-forwarder` = (project in file("."))
-  .settings(
-    name := "lagom-template"
+  .settings(name := "lagom-template")
+  .aggregate(
+    shared,
+    domain,
+    api,
+    app
   )
 
 lazy val shared = (project in file("shared"))

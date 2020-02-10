@@ -1,5 +1,3 @@
 package sk.bsmk
 
-class SimpleEntity {
-
-}
+class SimpleEntity {}

@@ -23,7 +23,7 @@ object Dependencies {
 
     val lagomPlayJson = "com.lightbend.lagom" %% "lagom-scaladsl-play-json" % LagomVersion.current
 
-    val scalaTest = "org.scalatest" %% "scalatest" % scalaTest
+    val scalaTest = "org.scalatest" %% "scalatest" % ScalaTestVersion
   }
 
   import Libraries._

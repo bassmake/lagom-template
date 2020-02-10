@@ -1,5 +1,3 @@
 package sk.bsmk
 
-class SimpleServiceImpl extends SimpleService {
-
-}
+class SimpleServiceImpl extends SimpleService {}

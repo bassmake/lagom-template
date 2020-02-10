@@ -1,5 +1,3 @@
 package sk.bsmk
 
-object Tenant {
-
-}
+object Tenant {}
