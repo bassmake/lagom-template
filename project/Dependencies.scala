@@ -10,7 +10,7 @@ object Dependencies {
     val NemeVersion =  "0.0.5"
     val TaggingVersion = "2.2.1"
 
-    val ScalaTestVersion = "3.0.8"
+    val ScalaTestVersion = "3.1.1"
 
   }
 
@@ -28,24 +28,24 @@ object Dependencies {
 
   import Libraries._
 
-  val CommonDeps = List(
+  val CommonDeps: List[ModuleID] = List(
     compilerPlugin(neme),
     tagging
   )
 
-  val SharedDeps = List(
+  val SharedDeps: List[ModuleID] = List(
     lagomPlayJson
   )
 
-  val DomainDeps = List(
+  val DomainDeps: List[ModuleID] = List(
     lagomScaladslPersistence,
     scalaTest % Test,
     lagomScaladslTestKit
   )
-  val ApiDeps = List(
+  val ApiDeps: List[ModuleID] = List(
     lagomScaladslApi
   )
 
-  val AppDeps = List()
+  val AppDeps: List[ModuleID] = List()
 
 }

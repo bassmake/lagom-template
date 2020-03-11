@@ -30,15 +30,25 @@ lazy val `shared-domain` = (project in file("domain/shared"))
   )
   .dependsOn(shared)
 
+lazy val `template-domain` = (project in file("domain/template"))
+  .settings(
+    name := "template-domain",
+    commonSettings,
+    libraryDependencies ++= DomainDeps
+  )
+  .dependsOn(`shared-domain`)
+
 lazy val domain = (project in file("domain"))
   .settings(
     commonSettings,
     libraryDependencies ++= DomainDeps
   )
   .dependsOn(
+    `template-domain`
   )
   .aggregate(
-    `shared-domain`
+    `shared-domain`,
+    `template-domain`
   )
 
 lazy val api = (project in file("api"))
